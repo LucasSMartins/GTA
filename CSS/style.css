@@ -1,0 +1,96 @@
+@charset  'UTF-8';
+
+* {
+      margin: 0px;
+      padding: 0px;
+}
+
+:root{
+      --limpo:#92d050;
+      --parceria:#00b0f0;
+      --sujo:#c00000;
+      --sujoParceria:#c65911;
+      --outro:#b4c6e7;
+}
+
+body{
+      /*background-image: linear-gradient(0deg,#800600, #CC0A00,  #FF0E00);*/
+}
+
+main{
+      display: flex;
+      justify-content: center;
+}
+
+section{
+      background-color: white;
+      margin: 20px;
+      box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.199);
+      
+}
+
+table{
+      margin: 20px;
+}
+
+#tabelas{
+      overflow-x: auto;
+}
+
+th,td{
+      
+      border: 1px solid black;
+      padding: 2px;
+      width: 150px;
+}
+
+#precos{
+      border: 1px solid black;
+      border-collapse: collapse;
+}
+
+#unidades{
+      border-collapse: collapse;
+}
+
+#valor_total_item{
+      border-collapse: collapse;
+}
+
+#outro{
+      border-collapse: collapse;
+}
+
+input{
+      border-style: none;
+      width: 149px;
+}
+
+.utensilios{
+      background-color: lightgray;
+}
+
+.limpo{
+      background-color: var(--limpo);
+}
+
+.parceria{
+      background-color: var(--parceria);
+}
+
+.sujo{
+      background-color: var(--sujo);
+}
+
+.sujo_parceria{
+      background-color: var(--sujoParceria);
+}
+
+.outro {
+      background-color: var(--outro);
+}
+
+div{
+      display: flex;
+      justify-content: center;
+}

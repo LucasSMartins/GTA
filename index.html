@@ -1,13 +1,346 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
       <meta charset="UTF-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <link rel="stylesheet" href="CSS//style.css">
-      <title>Tabela de Preços</title>
+      <title>Calculadora de Vendas</title>
 </head>
+
 <body>
-      
+      <!--
+            cada tr é uma linha
+            cada td é uma coluna e o conteúdo da coluna
+            cada th é titulo
+      -->
+
+      <main>
+            <section id="tabelas" >
+                  
+                  <table id="precos">
+                        <thead>
+                              <tr>
+                                    <th colspan="5" >Tabela de Preços</th>
+                              </tr>
+                              <th class="utensilios">Utensílios</th>
+                              <th class="limpo">Limpo</th>
+                              <th class="parceria">Parceria</th>
+                              <th class="sujo">Sujo</th>
+                              <th class="sujo_parceria">Sujo Parceria</th>
+                        </thead>
+                        <tbody>
+                              <tr>
+                                    <th>Keycard</th>
+                                    <td>R$ 5.000,00</td>
+                                    <td>S/N</td>
+                                    <td>S/N</td>
+                                    <td>S/N</td>
+                              </tr>
+                              <tr>
+                                    <th>Lockpick</th>
+                                    <td>R$ 20.000,00</td>
+                                    <td>R$ 15.000,00</td>
+                                    <td>R$ 35.000,00</td>
+                                    <td>R$ 25.000,00</td>
+                              </tr>
+                              <tr>
+                                    <th>Capuz</th>
+                                    <td>R$ 20.000,00</td>
+                                    <td>R$ 15.000,00</td>
+                                    <td>R$ 35.000,00</td>
+                                    <td>R$ 25.000,00</td>
+                              </tr>
+                              <tr>
+                                    <th>Algemas</th>
+                                    <td>R$ 20.000,00</td>
+                                    <td>R$ 15.000,00</td>
+                                    <td>R$ 35.000,00</td>
+                                    <td>R$ 25.000,00</td>
+                              </tr>
+                              <tr>
+                                    <th>Colete</th>
+                                    <td>R$ 35.000,00</td>
+                                    <td>R$ 25.000,00</td>
+                                    <td>R$ 55.000,00</td>
+                                    <td>R$ 40.000,00</td>
+                              </tr>
+                              <tr>
+                                    <th>Placa</th>
+                                    <td>R$ 40.000,00</td>
+                                    <td>R$ 30.000,00</td>
+                                    <td>R$ 60.000,00</td>
+                                    <td>R$ 50.000,00</td>
+                              </tr>
+                              <tr>
+                                    <th>Pendrive</th>
+                                    <td>R$ 40.000,00</td>
+                                    <td>R$ 30.000,00</td>
+                                    <td>R$ 60.000,00</td>
+                                    <td>R$ 50.000,00</td>
+                              </tr>
+                              <tr>
+                                    <th>C4</th>
+                                    <td>R$ 50.000,00</td>
+                                    <td>R$ 40.000,00</td>
+                                    <td>R$ 80.000,00</td>
+                                    <td>R$ 70.000,00</td>
+                              </tr>
+                        </tbody>
+                  </table>
+                  <table id="unidades">
+                        <thead>
+                              <tr>
+                                    <th colspan="5">Tabela de Quantidades</th>
+                              </tr>
+                              <th class="utensilios">Utensílios</th>
+                              <th class="limpo">Unidade</th>
+                              <th class="parceria">Unidade</th>
+                              <th class="sujo">Unidade</th>
+                              <th class="sujo_parceria">Unidade</th>
+                        </thead>
+                        <tbody>
+                              <tr>
+                                    <th>Keycard</th>
+                                    <td><input type="number"></td>
+                                    <td><input type="number"></td>
+                                    <td><input type="number"></td>
+                                    <td><input type="number"></td>
+                              </tr>
+                              <tr>
+                                    <th>Lockpick</th>
+                                    <td><input type="number"></td>
+                                    <td><input type="number"></td>
+                                    <td><input type="number"></td>
+                                    <td><input type="number"></td>
+                              </tr>
+                              <tr>
+                                    <th>Capuz</th>
+                                    <td><input type="number"></td>
+                                    <td><input type="number"></td>
+                                    <td><input type="number"></td>
+                                    <td><input type="number"></td>
+                              </tr>
+                              <tr>
+                                    <th>Algemas</th>
+                                    <td><input type="number"></td>
+                                    <td><input type="number"></td>
+                                    <td><input type="number"></td>
+                                    <td><input type="number"></td>
+                              </tr>
+                              <tr>
+                                    <th>Colete</th>
+                                    <td><input type="number"></td>
+                                    <td><input type="number"></td>
+                                    <td><input type="number"></td>
+                                    <td><input type="number"></td>
+                              </tr>
+                              <tr>
+                                    <th>Placa</th>
+                                    <td><input type="number"></td>
+                                    <td><input type="number"></td>
+                                    <td><input type="number"></td>
+                                    <td><input type="number"></td>
+                              </tr>
+                              <tr>
+                                    <th>Pendrive</th>
+                                    <td><input type="number"></td>
+                                    <td><input type="number"></td>
+                                    <td><input type="number"></td>
+                                    <td><input type="number"></td>
+                              </tr>
+                              <tr>
+                                    <th>C4</th>
+                                    <td><input type="number"></td>
+                                    <td><input type="number"></td>
+                                    <td><input type="number"></td>
+                                    <td><input type="number"></td>
+                              </tr>
+                        </tbody>
+                  </table>
+                  <table id="valor_total_item">
+                        <thead>
+                              <tr>
+                                    <th colspan="5">Tabela de Total de valores por item</th>
+                              </tr>
+                              <th class="utensilios">Utensílios</th>
+                              <th class="limpo">valor</th>
+                              <th class="parceria">valor</th>
+                              <th class="sujo">valor</th>
+                              <th class="sujo_parceria">valor</th>
+                        </thead>
+                        <tbody>
+                              <tr>
+                                    <th>Keycard</th>
+                                    <td>R$ 0,00</td>
+                                    <td>S/N</td>
+                                    <td>S/N</td>
+                                    <td>S/N</td>
+                              </tr>
+                              <tr>
+                                    <th>Lockpick</th>
+                                    <td>R$ 0,00</td>
+                                    <td>R$ 0,00</td>
+                                    <td>R$ 0,00</td>>
+                                    <td>R$ 0,00</td>
+                              </tr>
+                              <tr>
+                                    <th>Capuz</th>
+                                    <td>R$ 0,00</td>
+                                    <td>R$ 0,00</td>
+                                    <td>R$ 0,00</td>
+                                    <td>R$ 0,00</td>
+                              </tr>
+                              <tr>
+                                    <th>Algemas</th>
+                                    <td>R$ 0,00</td>
+                                    <td>R$ 0,00</td>
+                                    <td>R$ 0,00</td>
+                                    <td>R$ 0,00</td>
+                              </tr>
+                              <tr>
+                                    <th>Colete</th>
+                                    <td>R$ 0,00</td>
+                                    <td>R$ 0,00</td>
+                                    <td>R$ 0,00</td>
+                                    <td>R$ 0,00</td>
+                              </tr>
+                              <tr>
+                                    <th>Placa</th>
+                                    <td>R$ 0,00</td>
+                                    <td>R$ 0,00</td>
+                                    <td>R$ 0,00</td>
+                                    <td>R$ 0,00</td>
+                              </tr>
+                              <tr>
+                                    <th>Pendrive</th>
+                                    <td>R$ 0,00</td>
+                                    <td>R$ 0,00</td>
+                                    <td>R$ 0,00</td>
+                                    <td>R$ 0,00</td>
+                              </tr>
+                              <tr>
+                                    <th>C4</th>
+                                    <td>R$ 0,00</td>
+                                    <td>R$ 0,00</td>
+                                    <td>R$ 0,00</td>
+                                    <td>R$ 0,00</td>
+                              </tr>
+                        </tbody>
+                  </table>
+                  <div>
+                        <table id="outro">
+                              <thead>
+                                    <tr>
+                                          <th colspan="5" >Tabela de Outros itens</th>
+                                    </tr>
+                                    <th class="outro">Outros</th>
+                                    <th class="outro">Valor Unidade</th>
+                                    <th class="outro">Lucro</th>
+                              </thead>
+                              <tbody>
+                                    <tr>
+                                          <th>Molas</th>
+                                          <td>R$ 9.165,00</td>
+                                          <td>R$ 0,00</td>
+                                    </tr>
+                                    <tr>
+                                          <th>Gatilho</th>
+                                          <td>R$ 10.985,00 </td>
+                                          <td>R$ 0,00</td>
+                                    </tr>
+                                    <tr>
+                                          <th>Placa de Metal</th>
+                                          <td>R$ 10.205,00</td>
+                                          <td>R$ 0,00</td>
+                                    </tr>
+                              </tbody>
+                        </table>
+                  </div>
+            </section>
+      </main>
 </body>
+
 </html>
+
+<!-- <table id="#" >
+
+            <thead>
+                  <tr><th>Tabela de Quantidades</th></tr>
+                  <th>Utensílios</th>
+                  <th>Limpo</th>
+                  <th>Parceria</th>
+                  <th>Sujo</th>
+                  <th>Sujo Parceria</th>
+            </thead>
+
+            <tbody>
+                  
+                  <tr>
+                        <td>Keycard</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                  </tr>
+
+                  <tr>
+                        <td>Lockpick</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                  </tr>
+
+                  <tr>
+                        <td>Capuz</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                  </tr>
+
+                  <tr>
+                        <td>Algemas</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                  </tr>
+
+                  <tr>
+                        <td>Colete</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                  </tr>
+
+                  <tr>
+                        <td>Placa</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                  </tr>
+                  
+                  <tr>
+                        <td>Pendrive</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                  </tr>
+
+                  <tr>
+                        <td>C4</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                  </tr>
+                  
+
+            </tbody>
+      </table>-->

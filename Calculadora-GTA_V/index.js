@@ -4,13 +4,17 @@ const parceria = document.querySelector("#parceria");
 const sujo = document.querySelector("#Sujo");
 const sujoParceria = document.querySelector("#sujoParceria");
 const tipo = document.querySelector("#tipo");
-const b = document.querySelector("#b")
+const c = document.querySelector("#c")
 
 
 
 function calcular(un) {
-      
-      return un * 5000
+  if (un > 0){  
+  return un * 5000
+  }else{
+    c.innerHTML = ""
+  }
+  
 }
 
 
@@ -27,25 +31,25 @@ function resultado() {
       let unGatilhos = Number(document.querySelector("#Gatilhos").value);
       let unPlacadeMetal = Number(document.querySelector("#PlacadeMetal").value);
 
-      b.innerHTML = ""
-      b.innerHTML += `Keycard x${unKeycard}.....Total:${calcular(unKeycard).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}.<br/>`
-      b.innerHTML += `Lockpick x${unLockpick}.....Total:${calcular(unLockpick).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}.<br/>`
-      b.innerHTML += `Capuz x${unCapuz}.....Total:${calcular(unCapuz).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}.<br/>`
-      b.innerHTML += `Algemas x${unAlgemas}.....Total:${calcular(unAlgemas).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}.<br/>`
-      b.innerHTML += `Colete x${unColete}.....Total:${calcular(unColete).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}.<br/>`
-      b.innerHTML += `Placa x${unPlaca}.....Total:${calcular(unPlaca).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}.<br/>`
-      b.innerHTML += `Pendrive x${unPendrive}.....Total:${calcular(unPendrive).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}.<br/>`
-      b.innerHTML += `C4 x${unC4}.....Total:${calcular(unC4).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}.<br/>`
-      b.innerHTML += `Molas x${unMolas}.....Total:${calcular(unMolas).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}.<br/>`
-      b.innerHTML += `Gatilhos x${unGatilhos}.....Total:${calcular(unGatilhos).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}.<br/>`
-      b.innerHTML += `PlacadeMetal x${unPlacadeMetal}.....Total:${calcular(unPlacadeMetal).toLocaleString('pt-BR',{style:'currency',currency:'BRL'})}.<br/><br/>`
+      c.innerHTML = ""
+      c.innerHTML += `Keycard x${unKeycard}.....Total:${calcular(unKeycard).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}.<br/>`
+      c.innerHTML += `Lockpick x${unLockpick}.....Total:${calcular(unLockpick).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}.<br/>`
+      c.innerHTML += `Capuz x${unCapuz}.....Total:${calcular(unCapuz).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}.<br/>`
+      c.innerHTML += `Algemas x${unAlgemas}.....Total:${calcular(unAlgemas).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}.<br/>`
+      c.innerHTML += `Colete x${unColete}.....Total:${calcular(unColete).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}.<br/>`
+      c.innerHTML += `Placa x${unPlaca}.....Total:${calcular(unPlaca).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}.<br/>`
+      c.innerHTML += `Pendrive x${unPendrive}.....Total:${calcular(unPendrive).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}.<br/>`
+      c.innerHTML += `C4 x${unC4}.....Total:${calcular(unC4).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}.<br/>`
+      c.innerHTML += `Molas x${unMolas}.....Total:${calcular(unMolas).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}.<br/>`
+      c.innerHTML += `Gatilhos x${unGatilhos}.....Total:${calcular(unGatilhos).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}.<br/>`
+      c.innerHTML += `PlacadeMetal x${unPlacadeMetal}.....Total:${calcular(unPlacadeMetal).toLocaleString('pt-BR',{style:'currency',currency:'BRL'})}.<br/><br/>`
 }
 
 
 
 
 
-function verificarTipo() {
+/*function verificarTipo() {
   if (tipo == limpo) {
     alert("Limpo");
   } else if (tipo == parceria) {
@@ -57,4 +61,4 @@ function verificarTipo() {
   } else {
     alert("Deu tudo errado man");
   }
-}
+}*/

@@ -18,8 +18,8 @@ main {
     padding: 50px;
     margin: auto;
     display: flex;
-    justify-content: space-between;
-    width: 600px;
+    justify-content: space-evenly;
+    width: 90vw;
 }
 
 #conteudo {
@@ -42,10 +42,12 @@ ul {
 }
 
 #b {
-    width: 200px;
-    height: 200px;
+    padding: 20px;
+    min-width: 200px;
+    min-height: 200px;
     border: 1px solid black;
     border-radius: 15px;
+    line-height: 30px;
 }
 
 input {

@@ -22,12 +22,11 @@ function calcular(unidade, preco) {
     (totalColete = unidade.unColete * preco.Colete),
     (totalPlaca = unidade.unPlaca * preco.Placa),
     (totalPendrive = unidade.unPendrive * preco.Pendrive),
-    (totalC4 = unidade.unC4 * preco.C4),
+    (totalCQuatro = unidade.unC4 * preco.CQuatro),
     (totalMolas = unidade.unMolas * preco.Molas),
     (totalGatilhos = unidade.unGatilhos * preco.Gatilhos),
-    (totalPlacadeMetal = unidade.unPlacadeMetal * preco.PlacadeMetal),
+    (totalPlacaMetal = unidade.PlacaMetal * preco.PlacaMetal),
   ];
-
   return total;
 }
 
@@ -35,8 +34,7 @@ const resultado = (preco) => {
   const c = document.querySelector("#c");
   const d = document.querySelector("#d");
 
-  
-    const unidade = {
+  const unidade = {
     unKeycard: Number(document.querySelector("#Keycard").value),
     unLockpick: Number(document.querySelector("#Lockpick").value),
     unCapuz: Number(document.querySelector("#Capuz").value),
@@ -49,6 +47,20 @@ const resultado = (preco) => {
     unGatilhos: Number(document.querySelector("#Gatilhos").value),
     unPlacadeMetal: Number(document.querySelector("#PlacadeMetal").value),
   };
+
+  const uni = [
+    (unKeycard = Number(document.querySelector("#Keycard").value)),
+    (unLockpick = Number(document.querySelector("#Lockpick").value)),
+    (unCapuz = Number(document.querySelector("#Capuz").value)),
+    (unAlgemas = Number(document.querySelector("#Algemas").value)),
+    (unColete = Number(document.querySelector("#Colete").value)),
+    (unPlaca = Number(document.querySelector("#Placa").value)),
+    (unPendrive = Number(document.querySelector("#Pendrive").value)),
+    (unC4 = Number(document.querySelector("#C4").value)),
+    (unMolas = Number(document.querySelector("#Molas").value)),
+    (unGatilhos = Number(document.querySelector("#Gatilhos").value)),
+    (unPlacadeMetal = Number(document.querySelector("#PlacadeMetal").value)),
+  ];
   /*
   const item = {
     Keycard: "Keycard",
@@ -64,20 +76,6 @@ const resultado = (preco) => {
     PlacadeMetal: "Placa de Metal",
   };
   */
-  
-  const uni = [
-    unKeycard = Number(document.querySelector("#Keycard").value),
-    unLockpick = Number(document.querySelector("#Lockpick").value),
-    unCapuz = Number(document.querySelector("#Capuz").value),
-    unAlgemas = Number(document.querySelector("#Algemas").value),
-    unColete = Number(document.querySelector("#Colete").value),
-    unPlaca = Number(document.querySelector("#Placa").value),
-    unPendrive = Number(document.querySelector("#Pendrive").value),
-    unC4 = Number(document.querySelector("#C4").value),
-    unMolas = Number(document.querySelector("#Molas").value),
-    unGatilhos = Number(document.querySelector("#Gatilhos").value),
-    unPlacadeMetal = Number(document.querySelector("#PlacadeMetal").value),
-  ]
 
   const item = [
     "Keycard",
@@ -94,22 +92,39 @@ const resultado = (preco) => {
   ];
 
   const valor = calcular(unidade, preco);
+  console.log(valor); //teste
 
   /*c.innerHTML = "";
   Object.keys(item).forEach((i) => {
     c.innerHTML += `${item[i]}<br/>`;
   });*/
-  c.innerHTML = ""
+  c.innerHTML = "";
   d.innerHTML = "";
-  Object.keys(item, valor).forEach((i) => {
+  Object.keys(valor).forEach((i) => {
     if (valor[i] == 0) {
       c.innerHTML += "";
       d.innerHTML += "";
     } else {
       c.innerHTML += `${item[i]}   x${uni[i]} un<br/>`;
-      d.innerHTML += `${valor[i]}<br/>`;
+      d.innerHTML += `${valor[i].toLocaleString("pt-BR", {
+        style: "currency",
+        currency: "BRL",
+      })}<br/>`;
     }
   });
+
+  let valorTotal = 0;
+  for (let i = 0; i <= valor.length; i++) {
+    console.log(valor[i]);//teste
+    valorTotal += valor[i];
+    console.log(valorTotal);//teste
+  }
+
+  c.innerHTML += `Valor total: `;
+  d.innerHTML += `${valorTotal.toLocaleString("pt-BR", {
+    style: "currency",
+    currency: "BRL",
+  })}`;
 };
 
 function verificarTipo() {
@@ -124,10 +139,10 @@ function verificarTipo() {
       Colete: 35000,
       Placa: 40000,
       Pendrive: 40000,
-      C4: 50000,
+      CQuatro: 50000,
       Molas: 916500,
       Gatilhos: 1098500,
-      PlacaDeMetal: 1020500,
+      PlacaMetal: 1020500,
     };
     resultado(preco);
   } else if (tipo == "parceria") {
@@ -139,10 +154,10 @@ function verificarTipo() {
       Colete: 25000,
       Placa: 30000,
       Pendrive: 30000,
-      C4: 40000,
+      CQuatro: 40000,
       Molas: 916500,
       Gatilhos: 1098500,
-      PlacaDeMetal: 1020500,
+      PlacaMetal: 1020500,
     };
     resultado(preco);
   } else if (tipo == "sujo") {
@@ -154,10 +169,10 @@ function verificarTipo() {
       Colete: 55000,
       Placa: 60000,
       Pendrive: 60000,
-      C4: 80000,
+      CQuatro: 80000,
       Molas: 916500,
       Gatilhos: 1098500,
-      PlacaDeMetal: 1020500,
+      PlacaMetal: 1020500,
     };
     resultado(preco);
   } else if (tipo == "sujoParceria") {
@@ -169,10 +184,10 @@ function verificarTipo() {
       Colete: 40000,
       Placa: 50000,
       Pendrive: 50000,
-      C4: 70000,
+      CQuatro: 70000,
       Molas: 916500,
       Gatilhos: 1098500,
-      PlacaDeMetal: 1020500,
+      PlacaMetal: 1020500,
     };
     resultado(preco);
   } else {

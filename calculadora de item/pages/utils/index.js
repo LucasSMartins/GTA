@@ -70,7 +70,7 @@ function verificarTipo() {
 
 
 function calcular(unidade, preco) {
-  /*const total = {
+    /*const total = {
     totalKeycard: unidade.unKeycard * preco.Keycard,
     totalLockpick: unidade.unLockpick * preco.Lockpick,
     totalCapuz: unidade.unCapuz * preco.Capuz,
@@ -83,23 +83,30 @@ function calcular(unidade, preco) {
     totalGatilhos: unidade.unGatilhos * preco.Gatilhos,
     totalPlacadeMetal: unidade.unPlacadeMetal * preco.PlacadeMetal,
   };
+  return total*/
 
-  return total;*/
-  const total = [
-    (totalKeycard = unidade.unKeycard * preco.Keycard),
-    (totalLockpick = unidade.unLockpick * preco.Lockpick),
-    (totalCapuz = unidade.unCapuz * preco.Capuz),
-    (totalAlgemas = unidade.unAlgemas * preco.Algemas),
-    (totalColete = unidade.unColete * preco.Colete),
-    (totalPlaca = unidade.unPlaca * preco.Placa),
-    (totalPendrive = unidade.unPendrive * preco.Pendrive),
-    (totalCQuatro = unidade.unC4 * preco.CQuatro),
-    (totalMolas = unidade.unMolas * preco.Molas),
-    (totalGatilhos = unidade.unGatilhos * preco.Gatilhos),
-    (totalPlacaMetal = unidade.PlacaMetal * preco.PlacaMetal),
-  ];
-  return total;
+
+    const total = [
+    totalKeycard = unidade.unKeycard * preco.Keycard,
+    totalLockpick = unidade.unLockpick * preco.Lockpick,
+    totalCapuz = unidade.unCapuz * preco.Capuz,
+    totalAlgemas = unidade.unAlgemas * preco.Algemas,
+    totalColete = unidade.unColete * preco.Colete,
+    totalPlaca = unidade.unPlaca * preco.Placa,
+    totalPendrive = unidade.unPendrive * preco.Pendrive,
+    totalCQuatro = unidade.unC4 * preco.CQuatro,
+    totalMolas = unidade.unMolas * preco.Molas,
+    totalGatilhos = unidade.unGatilhos * preco.Gatilhos,
+    totalPlacaMetal = unidade.unPlacadeMetal * preco.PlacaMetal
+    ]
+  return total
 }
+
+
+
+
+
+
 
 const resultado = (preco) => {
   const c = document.querySelector("#c");
@@ -130,7 +137,7 @@ const resultado = (preco) => {
     (unC4 = Number(document.querySelector("#C4").value)),
     (unMolas = Number(document.querySelector("#Molas").value)),
     (unGatilhos = Number(document.querySelector("#Gatilhos").value)),
-    (unPlacadeMetal = Number(document.getElementById("PlacadeMetal").value)),
+    (unPlacadeMetal = Number(document.querySelector("#PlacadeMetal").value)),
   ];
   /*
   const item = {
@@ -160,17 +167,36 @@ const resultado = (preco) => {
     "Molas",
     "Gatilhos",
     "Placa de Metal",
-
   ];
 
-  console.log("================ \n");   
-
   const total = calcular(unidade, preco);
-  //console.log(total); //teste
+
+
+
+
+
+
+  /*
+  console.log("================ \n");
+  total.forEach(function (nome, indice, array) {
+    console.log(nome)
+    console.log(indice)
+    console.log(array)
+  })
+  Object.keys(total).forEach(i => console.log(i))
+  console.log(total); //teste
+  */
+
+
+
+
+
+
+
 
   c.innerHTML = ""
   d.innerHTML = ""
-  for(let i = 0;i < (total.length -1 ); i++){
+  for(let i = 0;i < (total.length); i++){
     if (total[i] == 0) {
       c.innerHTML += "";
       d.innerHTML += "";
@@ -188,7 +214,7 @@ const resultado = (preco) => {
   console.log(total.length)
 
   let valorTotal = 0;
-  for (let i = 0; i < (total.length - 1); i++) {
+  for (let i = 0; i < (total.length); i++) {
     valorTotal += total[i];
   }
   

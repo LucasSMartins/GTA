@@ -40,3 +40,20 @@ function calcular(un, preco) {
   }
 
 }
+//******************************************************************************************************* */
+c.innerHTML = "";
+  d.innerHTML = "";
+  Object.keys(total).forEach(i => {
+    if (total[i] == 0) {
+      c.innerHTML += "";
+      d.innerHTML += "";
+    } else {
+      c.innerHTML += `${item[i]}   x${uni[i]} un<br/>`;
+      d.innerHTML += `${total[i].toLocaleString("pt-BR", {
+        style: "currency",
+        currency: "BRL",
+      })}<br/>`;
+    }
+  });
+
+

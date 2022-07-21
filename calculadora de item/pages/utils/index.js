@@ -15,7 +15,7 @@ function verificarTipo() {
       Gatilhos: 10985,
       PlacaMetal: 10205,
       kitPistola: 41600,
-      kitFuzil:1,
+      kitFuzil: 1,
     };
     resultado(preco);
   } else if (tipo == "parceria") {
@@ -32,7 +32,7 @@ function verificarTipo() {
       Gatilhos: 10985,
       PlacaMetal: 10205,
       kitPistola: 41600,
-      kitFuzil:1,
+      kitFuzil: 1,
     };
     resultado(preco);
   } else if (tipo == "sujo") {
@@ -49,7 +49,7 @@ function verificarTipo() {
       Gatilhos: 10985,
       PlacaMetal: 10205,
       kitPistola: 41600,
-      kitFuzil:1,
+      kitFuzil: 1,
     };
     resultado(preco);
   } else if (tipo == "sujoParceria") {
@@ -66,7 +66,7 @@ function verificarTipo() {
       Gatilhos: 10985,
       PlacaMetal: 10205,
       kitPistola: 41600,
-      kitFuzil:1,
+      kitFuzil: 1,
     };
     resultado(preco);
   } else {
@@ -74,11 +74,7 @@ function verificarTipo() {
   }
 }
 
-
-
-
 function calcular(unidade, preco) {
-
   const total = [
     (totalKeycard = unidade.unKeycard * preco.Keycard),
     (totalLockpick = unidade.unLockpick * preco.Lockpick),
@@ -133,7 +129,6 @@ const resultado = (preco) => {
     (unkitFuzil = Number(document.querySelector("#kitFuzil").value)),
   ];
 
-
   const item = [
     "Keycard",
     "Lockpick",
@@ -150,12 +145,11 @@ const resultado = (preco) => {
     "kit de Fuzil",
   ];
 
-
   const total = calcular(unidade, preco);
 
-  c.innerHTML = ""
-  d.innerHTML = ""
-  for (let i = 0; i < (total.length); i++) {
+  c.innerHTML = "";
+  d.innerHTML = "";
+  for (let i = 0; i < total.length; i++) {
     if (total[i] == 0) {
       c.innerHTML += "";
       d.innerHTML += "";
@@ -168,12 +162,8 @@ const resultado = (preco) => {
     }
   }
 
-
-
-  console.log(total.length)
-
   let valorTotal = 0;
-  for (let i = 0; i < (total.length); i++) {
+  for (let i = 0; i < total.length; i++) {
     valorTotal += total[i];
   }
 
@@ -182,14 +172,4 @@ const resultado = (preco) => {
     style: "currency",
     currency: "BRL",
   })}`;
-
-
-
-
-}
-
-
-
-
-
-
+};

@@ -1,10 +1,10 @@
-import preco from "./dados/preco.json"
+import { preco } from "./dados/preco.json";
 
 function verificarTipo() {
   const tipo = document.getElementById("tipo").value;
 
   if (tipo == "limpo") {
-    resultado(preco.precoLimpo);    
+    resultado(preco.precoLimpo);
   } else if (tipo == "parceria") {
     resultado(preco.precoParceria);
   } else if (tipo == "sujo") {
@@ -31,20 +31,17 @@ function calcular(unidade, preco) {
     (totalPlacaMetal = unidade.unPlacadeMetal * preco.PlacaMetal),
     (totalkitPistola = unidade.unkitPistola * preco.kitPistola),
     (totalkitFuzil = unidade.unkitFuzil * preco.kitFuzil),
-  ]; 
+  ];
   return total;
 }
 
 const calcularCusto = (unidade, preco) => {
   const custoTotal = [
-    custoTotalKitPistola = unidade.unkitPistola * preco.custoKitPistola,
-    custoTotalKitFuzil = unidade.unkitFuzil * preco.custoKitFuzil
-  ]
-  return custoTotal
-}
-
-
-
+    (custoTotalKitPistola = unidade.unkitPistola * preco.custoKitPistola),
+    (custoTotalKitFuzil = unidade.unkitFuzil * preco.custoKitFuzil),
+  ];
+  return custoTotal;
+};
 
 const resultado = (preco) => {
   const c = document.querySelector("#c");
@@ -85,7 +82,6 @@ const resultado = (preco) => {
     (unkitFuzil = Number(document.querySelector("#kitFuzil").value)),
   ];
 
-
   const item = [
     "Keycard",
     "Lockpick",
@@ -102,10 +98,7 @@ const resultado = (preco) => {
     "kit de Fuzil",
   ];
 
-
-
   const total = calcular(unidade, preco);
-  
 
   c.innerHTML = "";
   d.innerHTML = "";
@@ -133,31 +126,25 @@ const resultado = (preco) => {
     currency: "BRL",
   })}<br/>`;
 
-
-
   //====================== CUSTO DE PEÇAS ==============================
 
-
   const custoTotal = calcularCusto(unidade, preco);
-  console.log(custoTotal) // teste 
-  const custoItem = [
-    "kit de Pistola",
-    "kit de Fuzil",
-  ]
+  console.log(custoTotal); // teste
+  const custoItem = ["kit de Pistola", "kit de Fuzil"];
   const custoUni = [
     (unkitPistola = Number(document.querySelector("#kitPistola").value)),
-    (unkitFuzil = Number(document.querySelector("#kitFuzil").value))
-  ]
+    (unkitFuzil = Number(document.querySelector("#kitFuzil").value)),
+  ];
 
   e.innerHTML = "";
   f.innerHTML = "";
-  for (let i = 0; i < custoTotal.length; i++){
+  for (let i = 0; i < custoTotal.length; i++) {
     if (custoTotal[i] == 0) {
       e.innerHTML += "";
       f.innerHTML += "";
-      h3custo.innerHTML = `` 
+      h3custo.innerHTML = ``;
     } else {
-      h3custo.innerHTML = `Custo dos Kits` 
+      h3custo.innerHTML = `Custo dos Kits`;
       e.innerHTML += `${custoItem[i]}   x${custoUni[i]} un<br/> `;
       f.innerHTML += `${custoTotal[i].toLocaleString("pt-BR", {
         style: "currency",
@@ -166,4 +153,3 @@ const resultado = (preco) => {
     }
   }
 };
-

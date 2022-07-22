@@ -1,0 +1,20 @@
+{
+  "name": "calculadora_de_itens",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./calculadora de item/pages/utils/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LucasSMartins/GTA.git"
+  },
+  "author": "Lucas Martins",
+  "license": "ISC",
+  "type":"module",
+  "bugs": {
+    "url": "https://github.com/LucasSMartins/GTA/issues"
+  },
+  "homepage": "https://github.com/LucasSMartins/GTA#readme"
+}

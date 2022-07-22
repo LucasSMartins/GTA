@@ -1,83 +1,16 @@
+import preco from "./dados/preco.json"
+
 function verificarTipo() {
   const tipo = document.getElementById("tipo").value;
 
   if (tipo == "limpo") {
-    const preco = {
-      Keycard: 5000,
-      Lockpick: 20000,
-      Capuz: 20000,
-      Algemas: 20000,
-      Colete: 35000,
-      Placa: 40000,
-      Pendrive: 40000,
-      CQuatro: 50000,
-      Molas: 9165,
-      Gatilhos: 10985,
-      PlacaMetal: 10205,
-      kitPistola: 41600,
-      kitFuzil: 59930,
-      custoKitPistola:32000,
-      custoKitFuzil:46100,
-      
-    };
-    resultado(preco);
+    resultado(preco.precoLimpo);    
   } else if (tipo == "parceria") {
-    const preco = {
-      Keycard: 5000,
-      Lockpick: 15000,
-      Capuz: 15000,
-      Algemas: 15000,
-      Colete: 25000,
-      Placa: 30000,
-      Pendrive: 30000,
-      CQuatro: 40000,
-      Molas: 9165,
-      Gatilhos: 10985,
-      PlacaMetal: 10205,
-      kitPistola: 41600,
-      kitFuzil: 59930,
-      custoKitPistola:32000,
-      custoKitFuzil:13830,
-    };
-    resultado(preco);
+    resultado(preco.precoParceria);
   } else if (tipo == "sujo") {
-    const preco = {
-      Keycard: 5000,
-      Lockpick: 35000,
-      Capuz: 35000,
-      Algemas: 35000,
-      Colete: 55000,
-      Placa: 60000,
-      Pendrive: 60000,
-      CQuatro: 80000,
-      Molas: 9165,
-      Gatilhos: 10985,
-      PlacaMetal: 10205,
-      kitPistola: 41600,
-      kitFuzil: 59930,
-      custoKitPistola:32000,
-      custoKitFuzil:13830,
-    };
-    resultado(preco);
+    resultado(preco.precoSujo);
   } else if (tipo == "sujoParceria") {
-    const preco = {
-      Keycard: 5000,
-      Lockpick: 25000,
-      Capuz: 25000,
-      Algemas: 25000,
-      Colete: 40000,
-      Placa: 50000,
-      Pendrive: 50000,
-      CQuatro: 70000,
-      Molas: 9165,
-      Gatilhos: 10985,
-      PlacaMetal: 10205,
-      kitPistola: 41600,
-      kitFuzil: 59930,
-      custoKitPistola:32000,
-      custoKitFuzil:13830,
-    };
-    resultado(preco);
+    resultado(preco.precoSujoParceria);
   } else {
     alert("Deu tudo errado man");
   }
@@ -152,10 +85,6 @@ const resultado = (preco) => {
     (unkitFuzil = Number(document.querySelector("#kitFuzil").value)),
   ];
 
-  const custoUni = [
-    (unkitPistola = Number(document.querySelector("#kitPistola").value)),
-    (unkitFuzil = Number(document.querySelector("#kitFuzil").value)),
-  ]
 
   const item = [
     "Keycard",
@@ -173,15 +102,10 @@ const resultado = (preco) => {
     "kit de Fuzil",
   ];
 
-  const custoItem = [
-    "kit de Pistola",
-    "kit de Fuzil",
-  ]
+
 
   const total = calcular(unidade, preco);
-  const custoTotal = calcularCusto(unidade, preco);
-
-  console.log(custoTotal)
+  
 
   c.innerHTML = "";
   d.innerHTML = "";
@@ -209,35 +133,37 @@ const resultado = (preco) => {
     currency: "BRL",
   })}<br/>`;
 
-  for (let i = 0; i < custoTotal.length; i++){
 
+
+  //====================== CUSTO DE PEÇAS ==============================
+
+
+  const custoTotal = calcularCusto(unidade, preco);
+  console.log(custoTotal) // teste 
+  const custoItem = [
+    "kit de Pistola",
+    "kit de Fuzil",
+  ]
+  const custoUni = [
+    (unkitPistola = Number(document.querySelector("#kitPistola").value)),
+    (unkitFuzil = Number(document.querySelector("#kitFuzil").value))
+  ]
+
+  e.innerHTML = "";
+  f.innerHTML = "";
+  for (let i = 0; i < custoTotal.length; i++){
     if (custoTotal[i] == 0) {
       e.innerHTML += "";
       f.innerHTML += "";
+      h3custo.innerHTML = `` 
     } else {
+      h3custo.innerHTML = `Custo dos Kits` 
       e.innerHTML += `${custoItem[i]}   x${custoUni[i]} un<br/> `;
       f.innerHTML += `${custoTotal[i].toLocaleString("pt-BR", {
         style: "currency",
         currency: "BRL",
       })}<br/>`;
-      if (i = 0) {
-        if (custoTotal[0] || custoTotal[1] != 0) {
-          h3custo.innerHTML += `Custo dos Kits`  
-         }  
-      }
-      
     }
   }
-  
-
-
-  
-
-
-
-
 };
-
-
-
 

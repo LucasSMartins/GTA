@@ -57,6 +57,12 @@ ul {
     justify-content: space-between;
 }
 
+#ef{
+    display: flex;
+    justify-content: space-between;
+    min-height: 100px;
+}
+
 #h4{
     border-bottom: 1px dashed;
     display: flex;
